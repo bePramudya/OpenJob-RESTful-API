@@ -1,0 +1,27 @@
+{
+	"name": "openjob-restful-api-v1",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"start": "node server.js",
+		"dev": "nodemon server.js",
+		"migrate": "node-pg-migrate -m ./src/migrations",
+		"lint-format": "biome check --write"
+	},
+	"dependencies": {
+		"cookie-parser": "~1.4.4",
+		"dotenv": "^17.4.2",
+		"express": "^5.2.1",
+		"joi": "^18.2.1",
+		"jose": "^6.2.3",
+		"morgan": "^1.11.0",
+		"pg": "^8.21.0",
+		"uuid": "^14.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.16",
+		"node-pg-migrate": "^8.0.4",
+		"nodemon": "^3.1.14"
+	}
+}
