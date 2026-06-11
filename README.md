@@ -129,11 +129,38 @@ TIPS:
 
 Semua pengujian Postman, baik wajib maupun opsional, tidak ada yang error.
 
+
+
+HIRAUKAN BAGIAN DIBAWAH (HANYA REFERENSI STRUCTURE DI AWAL PROJECT)
 ```text
-features/users/
-user.controller.js
-user.service.js
-user.repository.js
-user.routes.js
-user.schema.js ← gabungan model + validator
+src/
+├── apps/
+│   ├── users/
+│   │   ├── entry-points/
+│   │   │   ├── user.routes.js
+│   │   │   └── user.controllers.js
+│   │   ├── domain/
+│   │   │   ├── user.services.js
+│   │   │   └── user.schemas.js
+│   │   └── data-access/
+│   │       └── user.repositories.js
+│   │
+├── shared/
+│   ├── config/
+│   │   └── index.js          ← env validation (new)
+│   ├── database/
+│   │   └── pool.js
+│   ├── errors/               ← custom error classes (new)
+│   │   ├── AppError.js
+│   │   ├── NotFoundError.js
+│   │   ├── ValidationError.js
+│   │   └── UnauthorizedError.js
+│   ├── middlewares/
+│   │   ├── errorHandler.js   ← centralized error handler (new)
+│   │   ├── auth.js
+│   │   └── validate.js
+│   ├── routes/
+│   │   └── index.js
+│   └── utils/
+│       └── logger.js         ← pino logger (new)
 ```

@@ -1,13 +1,13 @@
 import pool from "../../shared/database/pool.js";
 import { ConflictError } from "../../shared/errors/index.js";
 
-class userRepository {
-	async insertUser({ name, email, hashedPassword }) {
+class UserRepositories {
+	async insertUser({ name, email, hashedPassword, role }) {
 		const query = {
-			text: `INSERT INTO users (name, email, password)
-            VALUES ($1, $2, $3)
-            RETURNING name, email`,
-			values: [name, email, hashedPassword],
+			text: `INSERT INTO users (name, email, password, role)
+                   VALUES ($1, $2, $3, $4)
+                       RETURNING id, name, email, role`,
+			values: [name, email, hashedPassword, role],
 		};
 
 		try {
@@ -21,11 +21,11 @@ class userRepository {
 		}
 	}
 
-	async getUser({ email }) {
+	async getUserById(id) {
 		const query = {
-			text: `SELECT id, name, email, role, created_at, password FROM users
-            WHERE email = $1`,
-			values: [email],
+			text: `SELECT id, name, email, role FROM users
+                   WHERE id = $1`,
+			values: [id],
 		};
 
 		const result = await pool.query(query);
@@ -33,4 +33,4 @@ class userRepository {
 	}
 }
 
-export default new userRepository();
+export default new UserRepositories();

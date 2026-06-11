@@ -1,33 +1,22 @@
 import response from "../../shared/utils/response.js";
-import { loginService, registerService } from "./user.service.js";
+import { getUserByIdService, registerService } from "./user.services.js";
 
 export const registerController = async (req, res, next) => {
-	const { email, password } = req.validated.body;
+	const { name, email, password, role } = req.validated.body;
 
 	try {
-		await registerService({ email, password });
-		return response(res, 201, "Register successful");
+		const user = await registerService({ name, email, password, role });
+		return response(res, 201, "Register successful", user);
 	} catch (error) {
 		next(error);
 	}
 };
 
-export const loginController = async (req, res, next) => {
-	const { email, password } = req.validated.body;
-
-	try {
-		const jwt = await loginService({ email, password });
-		response(res, 200, "Login successful", { token: jwt });
-	} catch (error) {
-		next(error);
-	}
-};
-
-export const getUserProfileController = async (req, res, next) => {
+export const getUserByIdController = async (req, res, next) => {
 	const { id } = req.validated.params;
 
 	try {
-		const userData = await getUserProfileService({ id });
+		const userData = await getUserByIdService(id);
 		response(res, 200, "User profile retrieved successfully", userData);
 	} catch (error) {
 		next(error);
