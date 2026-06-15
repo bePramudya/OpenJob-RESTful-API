@@ -1,3 +1,4 @@
+# V1
 ## Kriteria 1: Menggunakan Database untuk Menyimpan Data
 
 RESTful API yang Anda bangun haruslah menyimpan data di database PostgreSQL.
@@ -128,3 +129,67 @@ TIPS:
 - Access Token yang dihasilkan JWT memiliki masa berlaku hingga 3 jam setelah diterbitkan.
 
 Semua pengujian Postman, baik wajib maupun opsional, tidak ada yang error.
+
+# V2 (WIP)
+
+## Kriteria 1: RESTful API dapat Mengunggah Berkas Dokumen PDF
+
+- RESTful API dapat menggungah berkas PDF.
+- Terdapat validasi ukuran berkas yang diunggah.
+  - Maksimal berukuran 5 MB
+- Terdapat validasi MIME type berkas yang diunggah.
+- Menyimpan nama berkas yang berhasil diunggah di sebuah tabel.
+- Menggunakan library multer.
+- RESTful API dapat menampilkan berkas yang diunggah.
+- Semua pengujian Postman, baik wajib maupun opsional, tidak ada yang error.
+
+## Kriteria 2: Menerapkan Caching pada RESTful API (Redis)
+
+- Menerapkan caching pada endpoint detail salah satu resource. Rekomendasi (pilih salah satu). 
+  - GET /companies/:id (detail perusahaan)
+  - GET /users/:id (detail kandidat) 
+  - GET /applications/:id (detail lamaran).
+- Caching disimpan selama 1 jam.
+- Kredensial Redis disimpan di environment variables untuk memastikan keamanan data. Environment variables harus menggunakan nama berikut:
+  - REDIS_HOST
+- Menerapkan cache pada endpoint lain selain detail yang di kriteria Basic.
+- Jika response berasal dari cache, wajib mengembalikan header custom: X-Data-Source: cache.
+- Cache harus di-invalidate setiap ada perubahan data terkait:
+  - CREATE/UPDATE/DELETE Perusahaan menghapus cache GET /companies/:id.
+  - UPDATE User menghapus cache berikut:
+    - GET /users/:id.
+  - CREATE Lamaran menghapus cache berikut:
+    - GET /applications/user/:userId (list lamaran kandidat)
+    - GET /applications/job/:jobId (list lamaran perusahaan)
+  - UPDATE Lamaran menghapus cache berikut:
+    - GET /applications/:id (detail lamaran)
+    - GET /applications/user/:userId (list lamaran kandidat)
+    - GET /applications/job/:jobId (list lamaran perusahaan)
+  - CREATE/DELETE Bookmark menghapus cache berikut:
+    - GET /bookmarks (list bookmark milik kandidat)
+
+## Kriteria 3: Menerapkan Message Queue (RabbitMQ)
+
+- Mengirim message ke RabbitMQ saat kandidat membuat lamaran.
+  - Payload message hanya berisi application_id.
+- Mengirimkan satu program consumer yang memproses message secara asynchronous dari RabbitMQ.
+- Kredensial RabbitMQ di environment variables:
+  - RABBITMQ_HOST
+  - RABBITMQ_PORT
+  - RABBITMQ_USER
+  - RABBITMQ_PASSWORD
+  - AMQP_URL boleh digunakan, tetapi minimal RABBITMQ_HOST diwajibkan sesuai nama di atas.
+- Terdapat program consumer yang mengirimkan email menggunakan Nodemailer.
+  - Alamat email diambil dari database, bukan hardcoded.
+  - Consumer harus melakukan query untuk mencari pemilik lowongan (job owner) dan mengirimkan email notifikasi ke pemilik tersebut (bukan ke pelamar).
+- Terdapat informasi berikut di dalam email yang dikirimkan (data diambil dari database).
+  - Email pelamar
+  - Nama pelamar
+  - Tanggal lamaran
+- Kredensial email disimpan di environment variables. Environment variables harus menggunakan nama berikut:
+  - MAIL_HOST
+  - MAIL_PORT
+  - MAIL_USER
+  - MAIL_PASSWORD
+- Hanya pemilik jobs (pekerjaan) yang mendapatkan notifikasi ketika ada kandidat yang melamar.
+- Semua pengujian Postman, baik wajib maupun opsional, tidak ada yang error.
