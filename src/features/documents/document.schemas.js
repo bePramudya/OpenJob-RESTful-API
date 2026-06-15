@@ -1,5 +1,5 @@
 import Joi from "joi";
 
 export const getDocumentSchema = Joi.object({
-	id: Joi.string().uuid().required(),
+	id: Joi.string().required(),
 });

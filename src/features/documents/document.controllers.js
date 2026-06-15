@@ -1,4 +1,5 @@
 import response from "../../shared/utils/response.js";
+import responseFile from "../../shared/utils/responseFiles.js";
 import {
 	createDocumentService,
 	deleteDocumentService,
@@ -8,14 +9,15 @@ import {
 
 export const getDocumentsController = async (_req, res) => {
 	const documents = await getDocumentsService();
-	response(res, 200, "Documents retrieved successfully", documents);
+	response(res, 200, "Documents retrieved successfully", { documents });
 };
 
 export const getDocumentByIdController = async (req, res) => {
 	const { id } = req.validated.params;
 
 	const document = await getDocumentByIdService(id);
-	response(res, 200, "Document detail retrieved successfully", document);
+
+	return responseFile(res, document);
 };
 
 export const createDocumentController = async (req, res) => {

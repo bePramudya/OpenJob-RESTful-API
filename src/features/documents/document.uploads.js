@@ -3,10 +3,15 @@ import path from "node:path";
 import multer from "multer";
 
 const uploadDir = path.join(process.cwd(), "public", "uploads", "documents");
+fs.mkdirSync(uploadDir, { recursive: true });
 
-if (!fs.existsSync(uploadDir)) {
-	fs.mkdirSync(uploadDir, { recursive: true });
-}
+const ALLOWED_MIME_TYPES = new Set([
+	"application/pdf",
+	// "image/jpeg",
+	// "image/png",
+	// "application/msword",
+	// "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+]);
 
 const storage = multer.diskStorage({
 	destination: (_req, _file, cb) => {
@@ -22,18 +27,12 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (_req, file, cb) => {
-	const allowedTypes = [
-		"application/pdf",
-		"image/jpeg",
-		"image/png",
-		"application/msword",
-		"application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-	];
-
-	if (!allowedTypes.includes(file.mimetype)) {
-		return cb(new Error("Invalid document type"));
+	if (!ALLOWED_MIME_TYPES.has(file.mimetype)) {
+		return cb(
+			new Error("Invalid file type. Allowed: pdf"),
+			// new Error("Invalid file type. Allowed: pdf, jpg, png, doc, docx"),
+		);
 	}
-
 	cb(null, true);
 };
 

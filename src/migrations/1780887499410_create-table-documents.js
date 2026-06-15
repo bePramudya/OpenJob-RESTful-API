@@ -26,6 +26,10 @@ export const up = (pgm) => {
 			type: "varchar(255)",
 			notNull: true,
 		},
+		original_name: {
+			type: "TEXT",
+			notNull: true,
+		},
 		file_url: {
 			type: "varchar(500)",
 			notNull: true,

@@ -44,18 +44,27 @@ class DocumentRepositories {
 		return result.rows[0];
 	}
 
-	async insertDocument({ userId, filename, fileUrl, fileType, fileSize }) {
+	async insertDocument({
+		userId,
+		filename,
+		originalName,
+		fileUrl,
+		fileType,
+		fileSize,
+	}) {
+		console.log(userId, filename, originalName, fileUrl, fileType, fileSize);
 		const query = {
 			text: `INSERT INTO documents (
                     user_id,
                     filename,
+                    original_name,
                     file_url,
                     file_type,
                     file_size
                 )
-                VALUES ($1, $2, $3, $4, $5)
-                RETURNING id, user_id, filename, file_url, file_type, file_size, uploaded_at`,
-			values: [userId, filename, fileUrl, fileType, fileSize],
+                VALUES ($1, $2, $3, $4, $5, $6)
+                RETURNING id, filename, original_name, file_size`,
+			values: [userId, filename, originalName, fileUrl, fileType, fileSize],
 		};
 
 		const result = await pool.query(query);

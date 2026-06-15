@@ -5,6 +5,7 @@ import {
 	NotFoundError,
 	ValidationError,
 } from "../../shared/errors/index.js";
+import { isUuid } from "../../shared/utils/isUuid.js";
 import DocumentRepositories from "./document.repositories.js";
 
 export const getDocumentsService = async () => {
@@ -13,7 +14,7 @@ export const getDocumentsService = async () => {
 };
 
 export const getDocumentByIdService = async (id) => {
-	if (!id) throw new ValidationError("Document ID is required");
+	if (!id || !isUuid(id)) throw new NotFoundError("Document ID is required");
 
 	const document = await DocumentRepositories.getDocumentById(id);
 	if (!document) throw new NotFoundError("Document");
@@ -23,19 +24,27 @@ export const getDocumentByIdService = async (id) => {
 
 export const createDocumentService = async ({ userId, file }) => {
 	if (!userId) throw new ValidationError("User ID is required");
-	if (!file) throw new ValidationError("Document file is required");
+	if (!file) throw new ValidationError("File is required");
 
 	const fileUrl = `/uploads/documents/${file.filename}`;
 
+	console.log(file);
+
 	const document = await DocumentRepositories.insertDocument({
 		userId,
-		filename: file.originalname,
+		filename: file.filename,
+		originalName: file.originalname,
 		fileUrl,
 		fileType: file.mimetype,
 		fileSize: file.size,
 	});
 
-	return document;
+	return {
+		documentId: document.id,
+		filename: document.filename,
+		originalName: document.original_name,
+		size: document.file_size,
+	};
 };
 
 export const deleteDocumentService = async ({ id, userId }) => {
