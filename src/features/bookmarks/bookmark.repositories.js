@@ -1,5 +1,4 @@
 import pool from "../../shared/database/pool.js";
-import { ConflictError } from "../../shared/errors/index.js";
 
 class BookmarkRepositories {
 	async getBookmarksByUser(userId) {
@@ -95,15 +94,8 @@ class BookmarkRepositories {
 			values: [userId, jobId],
 		};
 
-		try {
-			const result = await pool.query(query);
-			return result.rows[0];
-		} catch (error) {
-			if (error.code === "23505") {
-				throw new ConflictError("Job already bookmarked");
-			}
-			throw error;
-		}
+		const result = await pool.query(query);
+		return result.rows[0];
 	}
 
 	async deleteBookmarkByUserAndJob({ userId, jobId }) {

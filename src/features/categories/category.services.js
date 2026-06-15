@@ -1,4 +1,5 @@
 import { NotFoundError, ValidationError } from "../../shared/errors/index.js";
+import { handleConflictError } from "../../shared/utils/handleConflictError.js";
 import { isUuid } from "../../shared/utils/isUuid.js";
 import CategoryRepositories from "./category.repositories.js";
 
@@ -19,10 +20,9 @@ export const getCategoryByIdService = async (id) => {
 export const createCategoryService = async ({ name, description }) => {
 	if (!name) throw new ValidationError("Category name is required");
 
-	const category = await CategoryRepositories.insertCategory({
-		name,
-		description,
-	});
+	const category = await Promise.try(() =>
+		CategoryRepositories.insertCategory({ name, description }),
+	).catch(handleConflictError("Category already exists"));
 
 	return category;
 };
@@ -33,11 +33,9 @@ export const updateCategoryService = async ({ id, name, description }) => {
 	const category = await CategoryRepositories.getCategoryById(id);
 	if (!category) throw new NotFoundError("Category");
 
-	const updatedCategory = await CategoryRepositories.updateCategory({
-		id,
-		name,
-		description,
-	});
+	const updatedCategory = await Promise.try(() =>
+		CategoryRepositories.updateCategory({ id, name, description }),
+	).catch(handleConflictError("Category already exists"));
 
 	return updatedCategory;
 };

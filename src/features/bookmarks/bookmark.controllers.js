@@ -6,62 +6,46 @@ import {
 	getMyBookmarksService,
 } from "./bookmark.services.js";
 
-export const getMyBookmarksController = async (req, res, next) => {
+export const getMyBookmarksController = async (req, res) => {
 	const userId = req.user.id;
 
-	try {
-		const bookmarks = await getMyBookmarksService(userId);
-		response(res, 200, "Bookmarks retrieved successfully", { bookmarks });
-	} catch (error) {
-		next(error);
-	}
+	const bookmarks = await getMyBookmarksService(userId);
+	response(res, 200, "Bookmarks retrieved successfully", { bookmarks });
 };
 
-export const getBookmarkByIdController = async (req, res, next) => {
+export const getBookmarkByIdController = async (req, res) => {
 	const { id, jobId } = req.validated.params;
 	const userId = req.user.id;
 
-	try {
-		const bookmark = await getBookmarkByIdService({
-			id,
-			jobId,
-			userId,
-		});
+	const bookmark = await getBookmarkByIdService({
+		id,
+		jobId,
+		userId,
+	});
 
-		response(res, 200, "Bookmark detail retrieved successfully", bookmark);
-	} catch (error) {
-		next(error);
-	}
+	response(res, 200, "Bookmark detail retrieved successfully", bookmark);
 };
 
-export const createBookmarkController = async (req, res, next) => {
+export const createBookmarkController = async (req, res) => {
 	const { jobId } = req.validated.params;
 	const userId = req.user.id;
 
-	try {
-		const bookmark = await createBookmarkService({
-			userId,
-			jobId,
-		});
+	const bookmark = await createBookmarkService({
+		userId,
+		jobId,
+	});
 
-		response(res, 201, "Bookmark created successfully", bookmark);
-	} catch (error) {
-		next(error);
-	}
+	response(res, 201, "Bookmark created successfully", bookmark);
 };
 
-export const deleteBookmarkController = async (req, res, next) => {
+export const deleteBookmarkController = async (req, res) => {
 	const { jobId } = req.validated.params;
 	const userId = req.user.id;
 
-	try {
-		await deleteBookmarkService({
-			userId,
-			jobId,
-		});
+	await deleteBookmarkService({
+		userId,
+		jobId,
+	});
 
-		response(res, 200, "Bookmark deleted successfully");
-	} catch (error) {
-		next(error);
-	}
+	response(res, 200, "Bookmark deleted successfully");
 };

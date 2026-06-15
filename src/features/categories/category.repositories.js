@@ -1,5 +1,4 @@
 import pool from "../../shared/database/pool.js";
-import { ConflictError } from "../../shared/errors/index.js";
 
 class CategoryRepositories {
 	async getCategories() {
@@ -33,15 +32,8 @@ class CategoryRepositories {
 			values: [name, description],
 		};
 
-		try {
-			const result = await pool.query(query);
-			return result.rows[0];
-		} catch (error) {
-			if (error.code === "23505") {
-				throw new ConflictError("Category already exists");
-			}
-			throw error;
-		}
+		const result = await pool.query(query);
+		return result.rows[0];
 	}
 
 	async updateCategory({ id, name, description }) {
@@ -55,15 +47,8 @@ class CategoryRepositories {
 			values: [id, name, description],
 		};
 
-		try {
-			const result = await pool.query(query);
-			return result.rows[0];
-		} catch (error) {
-			if (error.code === "23505") {
-				throw new ConflictError("Category already exists");
-			}
-			throw error;
-		}
+		const result = await pool.query(query);
+		return result.rows[0];
 	}
 
 	async deleteCategory(id) {

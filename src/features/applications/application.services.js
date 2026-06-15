@@ -3,6 +3,7 @@ import {
 	NotFoundError,
 	ValidationError,
 } from "../../shared/errors/index.js";
+import { handleConflictError } from "../../shared/utils/handleConflictError.js";
 import { isUuid } from "../../shared/utils/isUuid.js";
 import ApplicationRepositories from "./application.repositories.js";
 
@@ -51,11 +52,9 @@ export const createApplicationService = async ({
 	// 	throw new ForbiddenError("You cannot apply to your own job");
 	// }
 
-	const application = await ApplicationRepositories.insertApplication({
-		userId,
-		jobId,
-		coverLetter,
-	});
+	const application = await Promise.try(() =>
+		ApplicationRepositories.insertApplication({ userId, jobId, coverLetter }),
+	).catch(handleConflictError);
 
 	return application;
 };

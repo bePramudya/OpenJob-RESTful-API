@@ -6,50 +6,34 @@ import {
 	getDocumentsService,
 } from "./document.services.js";
 
-export const getDocumentsController = async (_req, res, next) => {
-	try {
-		const documents = await getDocumentsService();
-		response(res, 200, "Documents retrieved successfully", documents);
-	} catch (error) {
-		next(error);
-	}
+export const getDocumentsController = async (_req, res) => {
+	const documents = await getDocumentsService();
+	response(res, 200, "Documents retrieved successfully", documents);
 };
 
-export const getDocumentByIdController = async (req, res, next) => {
+export const getDocumentByIdController = async (req, res) => {
 	const { id } = req.validated.params;
 
-	try {
-		const document = await getDocumentByIdService(id);
-		response(res, 200, "Document detail retrieved successfully", document);
-	} catch (error) {
-		next(error);
-	}
+	const document = await getDocumentByIdService(id);
+	response(res, 200, "Document detail retrieved successfully", document);
 };
 
-export const createDocumentController = async (req, res, next) => {
+export const createDocumentController = async (req, res) => {
 	const userId = req.user.id;
 	const file = req.file;
 
-	try {
-		const document = await createDocumentService({
-			userId,
-			file,
-		});
+	const document = await createDocumentService({
+		userId,
+		file,
+	});
 
-		response(res, 201, "Document uploaded successfully", document);
-	} catch (error) {
-		next(error);
-	}
+	response(res, 201, "Document uploaded successfully", document);
 };
 
-export const deleteDocumentController = async (req, res, next) => {
+export const deleteDocumentController = async (req, res) => {
 	const { id } = req.validated.params;
 	const userId = req.user.id;
 
-	try {
-		await deleteDocumentService({ id, userId });
-		response(res, 200, "Document deleted successfully");
-	} catch (error) {
-		next(error);
-	}
+	await deleteDocumentService({ id, userId });
+	response(res, 200, "Document deleted successfully");
 };

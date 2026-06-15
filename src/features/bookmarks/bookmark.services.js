@@ -3,6 +3,7 @@ import {
 	NotFoundError,
 	ValidationError,
 } from "../../shared/errors/index.js";
+import { handleConflictError } from "../../shared/utils/handleConflictError.js";
 import { isUuid } from "../../shared/utils/isUuid.js";
 import BookmarkRepositories from "./bookmark.repositories.js";
 
@@ -35,10 +36,12 @@ export const createBookmarkService = async ({ userId, jobId }) => {
 	const job = await BookmarkRepositories.getJobById(jobId);
 	if (!job) throw new NotFoundError("Job");
 
-	const bookmark = await BookmarkRepositories.insertBookmark({
-		userId,
-		jobId,
-	});
+	const bookmark = await Promise.try(() =>
+		BookmarkRepositories.insertBookmark({
+			userId,
+			jobId,
+		}),
+	).catch(handleConflictError("Job already bookmarked"));
 
 	return bookmark;
 };

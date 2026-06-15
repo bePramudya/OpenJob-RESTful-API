@@ -11,7 +11,7 @@ import userRoutes from "../../features/users/user.routes.js";
 
 const router = Router();
 
-router.get("/", (_req, res, _next) => {
+router.get("/", (_req, res) => {
 	res.render("index", { title: "Express" });
 });
 

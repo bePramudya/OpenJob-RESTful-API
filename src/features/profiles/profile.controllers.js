@@ -5,39 +5,27 @@ import {
 	getProfileService,
 } from "./profile.services.js";
 
-export const getProfileController = async (req, res, next) => {
+export const getProfileController = async (req, res) => {
 	const userId = req.user.id;
 
-	try {
-		const profile = await getProfileService(userId);
-		response(res, 200, "Profile retrieved successfully", profile);
-	} catch (error) {
-		next(error);
-	}
+	const profile = await getProfileService(userId);
+	response(res, 200, "Profile retrieved successfully", profile);
 };
 
-export const getMyApplicationsController = async (req, res, next) => {
+export const getMyApplicationsController = async (req, res) => {
 	const userId = req.user.id;
 
-	try {
-		const applications = await getMyApplicationsService(userId);
-		response(res, 200, "Profile applications retrieved successfully", {
-			applications,
-		});
-	} catch (error) {
-		next(error);
-	}
+	const applications = await getMyApplicationsService(userId);
+	response(res, 200, "Profile applications retrieved successfully", {
+		applications,
+	});
 };
 
-export const getMyBookmarksController = async (req, res, next) => {
+export const getMyBookmarksController = async (req, res) => {
 	const userId = req.user.id;
 
-	try {
-		const bookmarks = await getMyBookmarksService(userId);
-		response(res, 200, "Profile bookmarks retrieved successfully", {
-			bookmarks,
-		});
-	} catch (error) {
-		next(error);
-	}
+	const bookmarks = await getMyBookmarksService(userId);
+	response(res, 200, "Profile bookmarks retrieved successfully", {
+		bookmarks,
+	});
 };

@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import "dotenv/config";
 import { NotFoundError, ValidationError } from "../../shared/errors/index.js";
+import { handleConflictError } from "../../shared/utils/handleConflictError.js";
 import { isUuid } from "../../shared/utils/isUuid.js";
 import UserRepositories from "./user.repositories.js";
 
@@ -16,21 +17,18 @@ export const registerService = async ({
 
 	const hashedPassword = await bcrypt.hash(password, 10);
 
-	const user = await UserRepositories.insertUser({
-		name,
-		email,
-		hashedPassword,
-		role,
-	});
+	const user = await Promise.try(() =>
+		UserRepositories.insertUser({ name, email, hashedPassword, role }),
+	).catch(handleConflictError("Email Already Registered"));
 
 	return user;
 };
 
 export const getUserByIdService = async (id) => {
-	if (!id || !isUuid(id)) throw new NotFoundError("User");
+	if (!id || !isUuid(id)) throw new NotFoundError("User Not Found");
 
 	const user = await UserRepositories.getUserById(id);
-	if (!user) throw new NotFoundError("User");
+	if (!user) throw new NotFoundError("User not Found");
 
 	return user;
 };
