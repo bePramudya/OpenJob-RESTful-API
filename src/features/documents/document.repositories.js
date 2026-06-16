@@ -52,7 +52,6 @@ class DocumentRepositories {
 		fileType,
 		fileSize,
 	}) {
-		console.log(userId, filename, originalName, fileUrl, fileType, fileSize);
 		const query = {
 			text: `INSERT INTO documents (
                     user_id,

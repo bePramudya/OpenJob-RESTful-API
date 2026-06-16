@@ -28,8 +28,6 @@ export const createDocumentService = async ({ userId, file }) => {
 
 	const fileUrl = `/uploads/documents/${file.filename}`;
 
-	console.log(file);
-
 	const document = await DocumentRepositories.insertDocument({
 		userId,
 		filename: file.filename,

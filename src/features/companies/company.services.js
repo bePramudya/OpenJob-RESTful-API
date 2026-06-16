@@ -54,7 +54,7 @@ export const updateCompanyService = async ({
 	if (!id || !isUuid(id)) throw new NotFoundError("Company ID not found");
 	if (!userId) throw new ValidationError("User ID is required");
 
-	const company = await CompanyRepositories.getCompanyById(id);
+	const { data: company } = await CompanyRepositories.getCompanyById(id);
 	if (!company) throw new NotFoundError("Company");
 
 	if (company.user_id !== userId) {
@@ -76,7 +76,7 @@ export const deleteCompanyService = async ({ id, userId }) => {
 	if (!id || !isUuid(id)) throw new NotFoundError("Company ID not found");
 	if (!userId) throw new ValidationError("User ID is required");
 
-	const company = await CompanyRepositories.getCompanyById(id);
+	const { data: company } = await CompanyRepositories.getCompanyById(id);
 	if (!company) throw new NotFoundError("Company");
 
 	if (company.user_id !== userId) {

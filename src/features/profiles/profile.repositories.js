@@ -24,8 +24,6 @@ class ProfileRepositories {
                     applications.applied_at,
                     applications.updated_at,
                     jobs.title AS job_title,
-                    jobs.description AS job_description,
-                    jobs.location AS job_location,
                     jobs.type AS job_type,
                     jobs.salary_min,
                     jobs.salary_max,

@@ -1,31 +1,30 @@
 import pool from "../../shared/database/pool.js";
-import { ConflictError } from "../../shared/errors/index.js";
+import CacheService from "../../shared/services/CacheService.js";
 import { cacheAside } from "../../shared/utils/cacheAside.js";
 
 class ApplicationRepositories {
 	async getApplications() {
 		const query = {
 			text: `SELECT
-                    applications.id,
-                    applications.user_id,
-                    applications.job_id,
-                    applications.status,
-                    applications.cover_letter,
-                    applications.applied_at,
-                    applications.updated_at,
-                    users.name AS user_name,
-                    users.email AS user_email,
-                    jobs.title AS job_title,
-                    companies.id AS company_id,
-                    companies.name AS company_name,
-                    categories.id AS category_id,
-                    categories.name AS category_name
-                FROM applications
-                JOIN users ON users.id = applications.user_id
-                JOIN jobs ON jobs.id = applications.job_id
-                JOIN companies ON companies.id = jobs.company_id
-                JOIN categories ON categories.id = jobs.category_id
-                ORDER BY applications.applied_at DESC`,
+        applications.id,
+        applications.user_id,
+        applications.job_id,
+        applications.status,
+        applications.cover_letter,
+        applications.applied_at,
+        users.name AS user_name,
+        users.email AS user_email,
+        jobs.title AS job_title,
+        companies.id AS company_id,
+        companies.name AS company_name,
+        categories.id AS category_id,
+        categories.name AS category_name
+        FROM applications
+        JOIN users ON users.id = applications.user_id
+        JOIN jobs ON jobs.id = applications.job_id
+        JOIN companies ON companies.id = jobs.company_id
+        JOIN categories ON categories.id = jobs.category_id
+        ORDER BY applications.applied_at DESC`,
 		};
 
 		const result = await pool.query(query);
@@ -68,13 +67,15 @@ class ApplicationRepositories {
 	}
 
 	async getApplicationsByUser(userId) {
-		const query = {
-			text: `SELECT
-                    applications.id,
-                    applications.user_id,
-                    applications.job_id,
-                    applications.status,
-                    applications.cover_letter,
+		const cacheKey = `applications:${userId}`;
+		return cacheAside(cacheKey, async () => {
+			const query = {
+				text: `SELECT
+        applications.id,
+        applications.user_id,
+        applications.job_id,
+        applications.status,
+        applications.cover_letter,
                     applications.applied_at,
                     applications.updated_at,
                     jobs.title AS job_title,
@@ -87,42 +88,46 @@ class ApplicationRepositories {
                     companies.name AS company_name,
                     categories.id AS category_id,
                     categories.name AS category_name
-                FROM applications
-                JOIN jobs ON jobs.id = applications.job_id
-                JOIN companies ON companies.id = jobs.company_id
-                JOIN categories ON categories.id = jobs.category_id
-                WHERE applications.user_id = $1
-                ORDER BY applications.applied_at DESC`,
-			values: [userId],
-		};
+                    FROM applications
+                    JOIN jobs ON jobs.id = applications.job_id
+                    JOIN companies ON companies.id = jobs.company_id
+                    JOIN categories ON categories.id = jobs.category_id
+                    WHERE applications.user_id = $1
+                    ORDER BY applications.applied_at DESC`,
+				values: [userId],
+			};
 
-		const result = await pool.query(query);
-		return result.rows;
+			const result = await pool.query(query);
+			return result.rows;
+		});
 	}
 
 	async getApplicationsByJob(jobId) {
-		const query = {
-			text: `SELECT
-                    applications.id,
-                    applications.user_id,
-                    applications.job_id,
-                    applications.status,
-                    applications.cover_letter,
-                    applications.applied_at,
-                    applications.updated_at,
-                    users.name AS user_name,
-                    users.email AS user_email,
-                    jobs.title AS job_title
-                FROM applications
-                JOIN users ON users.id = applications.user_id
-                JOIN jobs ON jobs.id = applications.job_id
-                WHERE applications.job_id = $1
-                ORDER BY applications.applied_at DESC`,
-			values: [jobId],
-		};
+		const cacheKey = `applications:${jobId}`;
+		return cacheAside(cacheKey, async () => {
+			const query = {
+				text: `SELECT
+        applications.id,
+        applications.user_id,
+        applications.job_id,
+        applications.status,
+        applications.cover_letter,
+        applications.applied_at,
+        applications.updated_at,
+        users.name AS user_name,
+        users.email AS user_email,
+        jobs.title AS job_title
+        FROM applications
+        JOIN users ON users.id = applications.user_id
+        JOIN jobs ON jobs.id = applications.job_id
+        WHERE applications.job_id = $1
+        ORDER BY applications.applied_at DESC`,
+				values: [jobId],
+			};
 
-		const result = await pool.query(query);
-		return result.rows;
+			const result = await pool.query(query);
+			return result.rows;
+		});
 	}
 
 	async getUserById(userId) {
@@ -155,6 +160,8 @@ class ApplicationRepositories {
 	}
 
 	async insertApplication({ userId, jobId, coverLetter }) {
+		const cacheKey = `applications:${userId}`;
+
 		const query = {
 			text: `INSERT INTO applications (user_id, job_id, cover_letter)
                 VALUES ($1, $2, $3)
@@ -162,18 +169,16 @@ class ApplicationRepositories {
 			values: [userId, jobId, coverLetter],
 		};
 
-		try {
-			const result = await pool.query(query);
-			return result.rows[0];
-		} catch (error) {
-			if (error.code === "23505") {
-				throw new ConflictError("You already applied for this job");
-			}
-			throw error;
-		}
+		CacheService.delete(cacheKey);
+
+		const result = await pool.query(query);
+		return result.rows[0];
 	}
 
-	async updateApplication({ id, status }) {
+	async updateApplication({ id, userId, status }) {
+		const cacheKey = `applications:${id}`;
+		const cacheKey2 = `applications:${userId}`;
+
 		const query = {
 			text: `UPDATE applications
                 SET status = $2,
@@ -183,11 +188,14 @@ class ApplicationRepositories {
 			values: [id, status],
 		};
 
+		CacheService.delete(cacheKey);
+		CacheService.delete(cacheKey2);
 		const result = await pool.query(query);
 		return result.rows[0];
 	}
 
 	async deleteApplication(id) {
+		const cacheKey = `applications:${id}`;
 		const query = {
 			text: `DELETE FROM applications
                 WHERE id = $1
@@ -195,6 +203,7 @@ class ApplicationRepositories {
 			values: [id],
 		};
 
+		CacheService.delete(cacheKey);
 		const result = await pool.query(query);
 		return result.rows[0];
 	}

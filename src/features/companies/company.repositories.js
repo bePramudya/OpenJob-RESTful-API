@@ -1,10 +1,11 @@
 import pool from "../../shared/database/pool.js";
+import CacheService from "../../shared/services/CacheService.js";
 import { cacheAside } from "../../shared/utils/cacheAside.js";
 
 class CompanyRepositories {
 	async getCompanies() {
 		const query = {
-			text: `SELECT id, user_id, name, description, location, website, created_at, updated_at
+			text: `SELECT id, user_id, name, description, location, website
                 FROM companies
                 ORDER BY created_at DESC`,
 		};
@@ -25,6 +26,7 @@ class CompanyRepositories {
 			};
 
 			const result = await pool.query(query);
+
 			return result.rows[0];
 		});
 	}
@@ -42,6 +44,8 @@ class CompanyRepositories {
 	}
 
 	async updateCompany({ id, name, description, location, website }) {
+		const cacheKey = `companies:${id}`;
+
 		const query = {
 			text: `UPDATE companies
                 SET name = COALESCE($2, name),
@@ -54,17 +58,23 @@ class CompanyRepositories {
 			values: [id, name, description, location, website],
 		};
 
+		CacheService.delete(cacheKey);
+
 		const result = await pool.query(query);
 		return result.rows[0];
 	}
 
 	async deleteCompany(id) {
+		const cacheKey = `companies:${id}`;
+
 		const query = {
 			text: `DELETE FROM companies
                 WHERE id = $1
                 RETURNING id`,
 			values: [id],
 		};
+
+		CacheService.delete(cacheKey);
 
 		const result = await pool.query(query);
 		return result.rows[0];

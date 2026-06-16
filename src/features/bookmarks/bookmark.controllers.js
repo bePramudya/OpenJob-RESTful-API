@@ -9,8 +9,8 @@ import {
 export const getMyBookmarksController = async (req, res) => {
 	const userId = req.user.id;
 
-	const bookmarks = await getMyBookmarksService(userId);
-	response(res, 200, "Bookmarks retrieved successfully", { bookmarks });
+	const { bookmarks, source } = await getMyBookmarksService(userId);
+	response(res, 200, "Bookmarks retrieved successfully", { bookmarks }, source);
 };
 
 export const getBookmarkByIdController = async (req, res) => {

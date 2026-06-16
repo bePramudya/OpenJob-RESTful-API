@@ -30,19 +30,27 @@ export const getApplicationByIdController = async (req, res) => {
 export const getApplicationsByUserController = async (req, res) => {
 	const { userId } = req.validated.params;
 
-	const applications = await getApplicationsByUserService(userId);
-	response(res, 200, "User applications retrieved successfully", {
-		applications,
-	});
+	const { applications, source } = await getApplicationsByUserService(userId);
+	response(
+		res,
+		200,
+		"User applications retrieved successfully",
+		{ applications },
+		source,
+	);
 };
 
 export const getApplicationsByJobController = async (req, res) => {
 	const { jobId } = req.validated.params;
 
-	const applications = await getApplicationsByJobService(jobId);
-	response(res, 200, "Job applications retrieved successfully", {
-		applications,
-	});
+	const { applications, source } = await getApplicationsByJobService(jobId);
+	response(
+		res,
+		200,
+		"Job applications retrieved successfully",
+		{ applications },
+		source,
+	);
 };
 
 export const createApplicationController = async (req, res) => {

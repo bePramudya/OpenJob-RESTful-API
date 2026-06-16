@@ -3,7 +3,7 @@ import pool from "../../shared/database/pool.js";
 class CategoryRepositories {
 	async getCategories() {
 		const query = {
-			text: `SELECT id, name, description, created_at, updated_at
+			text: `SELECT id, name, description, updated_at
                 FROM categories
                 ORDER BY created_at DESC`,
 		};

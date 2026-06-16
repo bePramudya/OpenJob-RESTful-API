@@ -8,10 +8,13 @@ import { isUuid } from "../../shared/utils/isUuid.js";
 import BookmarkRepositories from "./bookmark.repositories.js";
 
 export const getMyBookmarksService = async (userId) => {
+	console.log(userId);
 	if (!userId) throw new ValidationError("User ID is required");
+	console.log("lol");
 
-	const bookmarks = await BookmarkRepositories.getBookmarksByUser(userId);
-	return bookmarks;
+	const { data: bookmarks, source } =
+		await BookmarkRepositories.getBookmarksByUser(userId);
+	return { bookmarks, source };
 };
 
 export const getBookmarkByIdService = async ({ id, jobId, userId }) => {

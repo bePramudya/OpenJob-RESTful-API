@@ -24,19 +24,19 @@ export const getApplicationByIdService = async (id) => {
 };
 
 export const getApplicationsByUserService = async (userId) => {
-	if (!userId || !isUuid(userId)) return [];
+	if (!userId || !isUuid(userId)) return { applications: [], source: null };
 
-	const applications =
+	const { data: applications, source } =
 		await ApplicationRepositories.getApplicationsByUser(userId);
-	return applications;
+	return { applications, source };
 };
 
 export const getApplicationsByJobService = async (jobId) => {
-	if (!jobId || !isUuid(jobId)) return [];
+	if (!jobId || !isUuid(jobId)) return { applications: [], source: null };
 
-	const applications =
+	const { data: applications, source } =
 		await ApplicationRepositories.getApplicationsByJob(jobId);
-	return applications;
+	return { applications, source };
 };
 
 export const createApplicationService = async ({
@@ -56,7 +56,7 @@ export const createApplicationService = async ({
 
 	const application = await Promise.try(() =>
 		ApplicationRepositories.insertApplication({ userId, jobId, coverLetter }),
-	).catch(handleConflictError);
+	).catch(handleConflictError());
 
 	return application;
 };
@@ -66,7 +66,8 @@ export const updateApplicationService = async ({ id, userId, status }) => {
 	if (!userId) throw new ValidationError("User ID is required");
 	if (!status) throw new ValidationError("Application status is required");
 
-	const application = await ApplicationRepositories.getApplicationById(id);
+	const { data: application } =
+		await ApplicationRepositories.getApplicationById(id);
 	if (!application) throw new NotFoundError("Application");
 
 	if (application.company_owner_id !== userId) {
@@ -75,6 +76,7 @@ export const updateApplicationService = async ({ id, userId, status }) => {
 
 	const updatedApplication = await ApplicationRepositories.updateApplication({
 		id,
+		userId,
 		status,
 	});
 
@@ -85,7 +87,8 @@ export const deleteApplicationService = async ({ id, userId }) => {
 	if (!id) throw new ValidationError("Application ID is required");
 	if (!userId) throw new ValidationError("User ID is required");
 
-	const application = await ApplicationRepositories.getApplicationById(id);
+	const { data: application } =
+		await ApplicationRepositories.getApplicationById(id);
 	if (!application) throw new NotFoundError("Application");
 
 	if (
