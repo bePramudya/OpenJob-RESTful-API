@@ -1,4 +1,8 @@
-const response = (res, statusCode, message, data) => {
+const response = (res, statusCode, message, data, source) => {
+	if (source === "cache") {
+		res.set("X-Data-Source", "cache");
+	}
+
 	return res
 		.status(statusCode)
 		.json({
