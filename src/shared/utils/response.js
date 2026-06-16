@@ -1,7 +1,6 @@
 const response = (res, statusCode, message, data, source) => {
-	if (source === "cache") {
-		res.set("X-Data-Source", "cache");
-	}
+	if (source === "cache") res.set("X-Data-Source", "cache");
+	if (source === "database") res.set("X-Data-Source", "database");
 
 	return res
 		.status(statusCode)

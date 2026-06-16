@@ -6,7 +6,12 @@ export const cacheAside = async (cacheKey, fetchFn, expirationInSecond) => {
 		return { data: JSON.parse(cached), source: "cache" };
 	} catch (_error) {
 		const data = await fetchFn();
-		await CacheService.set(cacheKey, JSON.stringify(data), expirationInSecond);
+		if (data)
+			await CacheService.set(
+				cacheKey,
+				JSON.stringify(data),
+				expirationInSecond,
+			);
 		return { data, source: "database" };
 	}
 };
