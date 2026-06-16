@@ -17,8 +17,14 @@ export const getApplicationsController = async (_req, res) => {
 export const getApplicationByIdController = async (req, res) => {
 	const { id } = req.validated.params;
 
-	const application = await getApplicationByIdService(id);
-	response(res, 200, "Application detail retrieved successfully", application);
+	const { application, source } = await getApplicationByIdService(id);
+	response(
+		res,
+		200,
+		"Application detail retrieved successfully",
+		application,
+		source,
+	);
 };
 
 export const getApplicationsByUserController = async (req, res) => {

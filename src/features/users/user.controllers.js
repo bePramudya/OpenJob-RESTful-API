@@ -11,6 +11,6 @@ export const registerController = async (req, res) => {
 export const getUserByIdController = async (req, res) => {
 	const { id } = req.validated.params;
 
-	const userData = await getUserByIdService(id);
-	response(res, 200, "User profile retrieved successfully", userData);
+	const { user, source } = await getUserByIdService(id);
+	response(res, 200, "User profile retrieved successfully", user, source);
 };

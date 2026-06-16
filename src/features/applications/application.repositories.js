@@ -1,5 +1,6 @@
 import pool from "../../shared/database/pool.js";
 import { ConflictError } from "../../shared/errors/index.js";
+import { cacheAside } from "../../shared/utils/cacheAside.js";
 
 class ApplicationRepositories {
 	async getApplications() {
@@ -32,34 +33,38 @@ class ApplicationRepositories {
 	}
 
 	async getApplicationById(id) {
-		const query = {
-			text: `SELECT
-                    applications.id,
-                    applications.user_id,
-                    applications.job_id,
-                    applications.status,
-                    applications.cover_letter,
-                    applications.applied_at,
-                    applications.updated_at,
-                    users.name AS user_name,
-                    users.email AS user_email,
-                    jobs.title AS job_title,
-                    jobs.company_id,
-                    companies.name AS company_name,
-                    companies.user_id AS company_owner_id,
-                    categories.id AS category_id,
-                    categories.name AS category_name
-                FROM applications
-                JOIN users ON users.id = applications.user_id
-                JOIN jobs ON jobs.id = applications.job_id
-                JOIN companies ON companies.id = jobs.company_id
-                JOIN categories ON categories.id = jobs.category_id
-                WHERE applications.id = $1`,
-			values: [id],
-		};
+		const cacheKey = `applications:${id}`;
 
-		const result = await pool.query(query);
-		return result.rows[0];
+		return cacheAside(cacheKey, async () => {
+			const query = {
+				text: `SELECT
+        applications.id,
+        applications.user_id,
+        applications.job_id,
+        applications.status,
+        applications.cover_letter,
+        applications.applied_at,
+        applications.updated_at,
+        users.name AS user_name,
+        users.email AS user_email,
+        jobs.title AS job_title,
+        jobs.company_id,
+        companies.name AS company_name,
+        companies.user_id AS company_owner_id,
+        categories.id AS category_id,
+        categories.name AS category_name
+        FROM applications
+        JOIN users ON users.id = applications.user_id
+        JOIN jobs ON jobs.id = applications.job_id
+        JOIN companies ON companies.id = jobs.company_id
+        JOIN categories ON categories.id = jobs.category_id
+        WHERE applications.id = $1`,
+				values: [id],
+			};
+
+			const result = await pool.query(query);
+			return result.rows[0];
+		});
 	}
 
 	async getApplicationsByUser(userId) {

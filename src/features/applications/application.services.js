@@ -15,10 +15,12 @@ export const getApplicationsService = async () => {
 export const getApplicationByIdService = async (id) => {
 	if (!id) throw new ValidationError("Application ID is required");
 
-	const application = await ApplicationRepositories.getApplicationById(id);
-	if (!application) throw new NotFoundError("Application");
+	const { data: application, source } =
+		await ApplicationRepositories.getApplicationById(id);
 
-	return application;
+	if (!application) throw new NotFoundError("Application not found");
+
+	return { application, source };
 };
 
 export const getApplicationsByUserService = async (userId) => {

@@ -14,10 +14,12 @@ export const getCompaniesService = async () => {
 export const getCompanyByIdService = async (id) => {
 	if (!id || !isUuid(id)) throw new NotFoundError("Company Id not found");
 
-	const company = await CompanyRepositories.getCompanyById(id);
+	const { data: company, source } =
+		await CompanyRepositories.getCompanyById(id);
+
 	if (!company) throw new NotFoundError("Company");
 
-	return company;
+	return { company, source };
 };
 
 export const createCompanyService = async ({

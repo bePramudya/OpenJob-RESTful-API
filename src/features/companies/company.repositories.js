@@ -1,4 +1,5 @@
 import pool from "../../shared/database/pool.js";
+import { cacheAside } from "../../shared/utils/cacheAside.js";
 
 class CompanyRepositories {
 	async getCompanies() {
@@ -13,15 +14,19 @@ class CompanyRepositories {
 	}
 
 	async getCompanyById(id) {
-		const query = {
-			text: `SELECT id, user_id, name, description, location, website, created_at, updated_at
-                FROM companies
-                WHERE id = $1`,
-			values: [id],
-		};
+		const cacheKey = `companies:${id}`;
 
-		const result = await pool.query(query);
-		return result.rows[0];
+		return cacheAside(cacheKey, async () => {
+			const query = {
+				text: `SELECT id, user_id, name, description, location, website, created_at, updated_at
+              FROM companies
+              WHERE id = $1`,
+				values: [id],
+			};
+
+			const result = await pool.query(query);
+			return result.rows[0];
+		});
 	}
 
 	async insertCompany({ userId, name, description, location, website }) {

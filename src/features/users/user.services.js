@@ -27,8 +27,8 @@ export const registerService = async ({
 export const getUserByIdService = async (id) => {
 	if (!id || !isUuid(id)) throw new NotFoundError("User Not Found");
 
-	const user = await UserRepositories.getUserById(id);
+	const { data: user, source } = await UserRepositories.getUserById(id);
 	if (!user) throw new NotFoundError("User not Found");
 
-	return user;
+	return { user, source };
 };

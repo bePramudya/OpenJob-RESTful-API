@@ -11,11 +11,12 @@ export const getCompaniesController = async (_req, res) => {
 	const companies = await getCompaniesService();
 	response(res, 200, "Companies retrieved successfully", { companies });
 };
+
 export const getCompanyByIdController = async (req, res) => {
 	const { id } = req.validated.params;
 
-	const company = await getCompanyByIdService(id);
-	response(res, 200, "Company detail retrieved successfully", company);
+	const { company, source } = await getCompanyByIdService(id);
+	response(res, 200, "Company detail retrieved successfully", company, source);
 };
 
 export const createCompanyController = async (req, res) => {
