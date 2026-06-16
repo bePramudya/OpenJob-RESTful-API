@@ -86,9 +86,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users"]
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -140,9 +144,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users"]
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -174,9 +182,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users", "xxx"]
+							"path": [
+								"users",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -210,9 +223,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users/{{userId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users", "{{userId}}"]
+							"path": [
+								"users",
+								"{{userId}}"
+							]
 						}
 					},
 					"response": []
@@ -251,9 +269,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -293,9 +315,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents"]
+							"path": [
+								"documents"
+							]
 						}
 					},
 					"response": []
@@ -337,9 +363,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents"]
+							"path": [
+								"documents"
+							]
 						}
 					},
 					"response": []
@@ -388,9 +418,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents"]
+							"path": [
+								"documents"
+							]
 						}
 					},
 					"response": []
@@ -448,9 +482,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents"]
+							"path": [
+								"documents"
+							]
 						}
 					},
 					"response": []
@@ -483,9 +521,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents"]
+							"path": [
+								"documents"
+							]
 						}
 					},
 					"response": []
@@ -516,9 +558,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents", "xxx"]
+							"path": [
+								"documents",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -552,9 +599,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents/{{documentId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents", "{{documentId}}"]
+							"path": [
+								"documents",
+								"{{documentId}}"
+							]
 						}
 					},
 					"response": []
@@ -580,9 +632,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents/{{documentId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents", "{{documentId}}"]
+							"path": [
+								"documents",
+								"{{documentId}}"
+							]
 						}
 					},
 					"response": []
@@ -619,9 +676,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/documents/{{documentId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["documents", "{{documentId}}"]
+							"path": [
+								"documents",
+								"{{documentId}}"
+							]
 						}
 					},
 					"response": []
@@ -661,9 +723,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -713,9 +779,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies"]
+							"path": [
+								"companies"
+							]
 						}
 					},
 					"response": []
@@ -765,9 +835,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "xxx"]
+							"path": [
+								"companies",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -808,9 +883,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "xxx"]
+							"path": [
+								"companies",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -887,9 +967,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies"]
+							"path": [
+								"companies"
+							]
 						}
 					},
 					"response": []
@@ -938,9 +1022,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies"]
+							"path": [
+								"companies"
+							]
 						}
 					},
 					"response": []
@@ -982,9 +1070,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies"]
+							"path": [
+								"companies"
+							]
 						}
 					},
 					"response": []
@@ -1015,9 +1107,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "xxx"]
+							"path": [
+								"companies",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -1051,9 +1148,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/{{companyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "{{companyId}}"]
+							"path": [
+								"companies",
+								"{{companyId}}"
+							]
 						}
 					},
 					"response": []
@@ -1094,9 +1196,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "xxx"]
+							"path": [
+								"companies",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -1167,9 +1274,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/{{companyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "{{companyId}}"]
+							"path": [
+								"companies",
+								"{{companyId}}"
+							]
 						}
 					},
 					"response": []
@@ -1201,9 +1313,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "xxx"]
+							"path": [
+								"companies",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -1253,9 +1370,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/{{companyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "{{companyId}}"]
+							"path": [
+								"companies",
+								"{{companyId}}"
+							]
 						}
 					},
 					"response": []
@@ -1310,9 +1432,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories"]
+							"path": [
+								"categories"
+							]
 						}
 					},
 					"response": []
@@ -1362,9 +1488,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "xxx"]
+							"path": [
+								"categories",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -1405,9 +1536,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "xxx"]
+							"path": [
+								"categories",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -1484,9 +1620,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories"]
+							"path": [
+								"categories"
+							]
 						}
 					},
 					"response": []
@@ -1518,9 +1658,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "xxx"]
+							"path": [
+								"categories",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -1561,9 +1706,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "xxx"]
+							"path": [
+								"categories",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -1595,9 +1745,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "xxx"]
+							"path": [
+								"categories",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -1645,9 +1800,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories"]
+							"path": [
+								"categories"
+							]
 						}
 					},
 					"response": []
@@ -1687,9 +1846,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories"]
+							"path": [
+								"categories"
+							]
 						}
 					},
 					"response": []
@@ -1724,9 +1887,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/{{categoryId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "{{categoryId}}"]
+							"path": [
+								"categories",
+								"{{categoryId}}"
+							]
 						}
 					},
 					"response": []
@@ -1797,9 +1965,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/{{categoryId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "{{categoryId}}"]
+							"path": [
+								"categories",
+								"{{categoryId}}"
+							]
 						}
 					},
 					"response": []
@@ -1848,9 +2021,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/{{categoryId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "{{categoryId}}"]
+							"path": [
+								"categories",
+								"{{categoryId}}"
+							]
 						}
 					},
 					"response": []
@@ -1895,9 +2073,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies"]
+							"path": [
+								"companies"
+							]
 						}
 					},
 					"response": []
@@ -1937,9 +2119,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories"]
+							"path": [
+								"categories"
+							]
 						}
 					},
 					"response": []
@@ -1989,9 +2175,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -2041,9 +2231,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "xxx"]
+							"path": [
+								"jobs",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -2084,9 +2279,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "xxx"]
+							"path": [
+								"jobs",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -2163,9 +2363,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -2213,9 +2417,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -2257,9 +2465,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -2311,9 +2523,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs?title=Backend",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"],
+							"path": [
+								"jobs"
+							],
 							"query": [
 								{
 									"key": "title",
@@ -2371,9 +2587,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs?company-name=Tech Corp",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"],
+							"path": [
+								"jobs"
+							],
 							"query": [
 								{
 									"key": "company-name",
@@ -2433,9 +2653,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs?title=Developer&company-name=Tech",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"],
+							"path": [
+								"jobs"
+							],
 							"query": [
 								{
 									"key": "title",
@@ -2491,9 +2715,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs?title=NonExistentJobTitle12345",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"],
+							"path": [
+								"jobs"
+							],
 							"query": [
 								{
 									"key": "title",
@@ -2546,9 +2774,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs?title=&company-name=",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"],
+							"path": [
+								"jobs"
+							],
 							"query": [
 								{
 									"key": "title",
@@ -2591,9 +2823,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/company/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "company", "xxx"]
+							"path": [
+								"jobs",
+								"company",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -2633,9 +2871,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/company/{{jobCompanyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "company", "{{jobCompanyId}}"]
+							"path": [
+								"jobs",
+								"company",
+								"{{jobCompanyId}}"
+							]
 						}
 					},
 					"response": []
@@ -2668,9 +2912,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/category/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "category", "xxx"]
+							"path": [
+								"jobs",
+								"category",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -2710,9 +2960,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/category/{{jobCategoryId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "category", "{{jobCategoryId}}"]
+							"path": [
+								"jobs",
+								"category",
+								"{{jobCategoryId}}"
+							]
 						}
 					},
 					"response": []
@@ -2738,9 +2994,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "xxx"]
+							"path": [
+								"jobs",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -2774,9 +3035,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}"]
+							"path": [
+								"jobs",
+								"{{jobId}}"
+							]
 						}
 					},
 					"response": []
@@ -2846,9 +3112,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}"]
+							"path": [
+								"jobs",
+								"{{jobId}}"
+							]
 						}
 					},
 					"response": []
@@ -2897,9 +3168,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}"]
+							"path": [
+								"jobs",
+								"{{jobId}}"
+							]
 						}
 					},
 					"response": []
@@ -2944,9 +3220,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -2996,9 +3276,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -3039,9 +3323,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -3082,9 +3370,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "xxx"]
+							"path": [
+								"applications",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -3132,9 +3425,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -3180,9 +3477,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -3221,9 +3522,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{applicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{applicationId}}"]
+							"path": [
+								"applications",
+								"{{applicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -3262,9 +3568,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/user/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "user", "xxx"]
+							"path": [
+								"applications",
+								"user",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -3310,9 +3622,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/user/{{userId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "user", "{{userId}}"]
+							"path": [
+								"applications",
+								"user",
+								"{{userId}}"
+							]
 						}
 					},
 					"response": []
@@ -3351,9 +3669,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/job/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "job", "xxx"]
+							"path": [
+								"applications",
+								"job",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -3400,9 +3724,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/job/{{applicationJobId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "job", "{{applicationJobId}}"]
+							"path": [
+								"applications",
+								"job",
+								"{{applicationJobId}}"
+							]
 						}
 					},
 					"response": []
@@ -3434,9 +3764,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/user/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "user", "xxx"]
+							"path": [
+								"applications",
+								"user",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -3468,9 +3804,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/job/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "job", "xxx"]
+							"path": [
+								"applications",
+								"job",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -3546,9 +3888,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{applicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{applicationId}}"]
+							"path": [
+								"applications",
+								"{{applicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -3605,9 +3952,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{applicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{applicationId}}"]
+							"path": [
+								"applications",
+								"{{applicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -3652,9 +4004,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -3704,9 +4060,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}/bookmark",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}", "bookmark"]
+							"path": [
+								"jobs",
+								"{{jobId}}",
+								"bookmark"
+							]
 						}
 					},
 					"response": []
@@ -3747,9 +4109,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/bookmarks",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["bookmarks"]
+							"path": [
+								"bookmarks"
+							]
 						}
 					},
 					"response": []
@@ -3790,9 +4156,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}/bookmark",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}", "bookmark"]
+							"path": [
+								"jobs",
+								"{{jobId}}",
+								"bookmark"
+							]
 						}
 					},
 					"response": []
@@ -3840,9 +4212,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}/bookmark",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}", "bookmark"]
+							"path": [
+								"jobs",
+								"{{jobId}}",
+								"bookmark"
+							]
 						}
 					},
 					"response": []
@@ -3888,9 +4266,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/bookmarks",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["bookmarks"]
+							"path": [
+								"bookmarks"
+							]
 						}
 					},
 					"response": []
@@ -3928,9 +4310,16 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}/bookmark/xxx",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}", "bookmark", "xxx"]
+							"path": [
+								"jobs",
+								"{{jobId}}",
+								"bookmark",
+								"xxx"
+							]
 						}
 					},
 					"response": []
@@ -3969,9 +4358,16 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}/bookmark/{{bookmarkId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}", "bookmark", "{{bookmarkId}}"]
+							"path": [
+								"jobs",
+								"{{jobId}}",
+								"bookmark",
+								"{{bookmarkId}}"
+							]
 						}
 					},
 					"response": []
@@ -4029,9 +4425,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}/bookmark",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}", "bookmark"]
+							"path": [
+								"jobs",
+								"{{jobId}}",
+								"bookmark"
+							]
 						}
 					},
 					"response": []
@@ -4058,9 +4460,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users"]
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -4082,9 +4488,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users"]
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -4167,9 +4577,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4180,7 +4594,9 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"exec": [""],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						},
@@ -4227,9 +4643,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4240,7 +4660,9 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"exec": [""],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						},
@@ -4287,9 +4709,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4300,7 +4726,9 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"exec": [""],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						},
@@ -4352,9 +4780,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4365,7 +4797,9 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"exec": [""],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						},
@@ -4417,9 +4851,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4470,9 +4908,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4523,9 +4965,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4576,9 +5022,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4630,9 +5080,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4689,9 +5143,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4748,9 +5206,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4807,9 +5269,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4866,9 +5332,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4919,9 +5389,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4961,9 +5435,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -4974,7 +5452,9 @@
 						{
 							"listen": "test",
 							"script": {
-								"exec": [""],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						}
@@ -5000,9 +5480,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -5043,9 +5527,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile"]
+							"path": [
+								"profile"
+							]
 						}
 					},
 					"response": []
@@ -5092,9 +5580,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile"]
+							"path": [
+								"profile"
+							]
 						}
 					},
 					"response": []
@@ -5145,9 +5637,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile"]
+							"path": [
+								"profile"
+							]
 						}
 					},
 					"response": []
@@ -5188,9 +5684,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile", "applications"]
+							"path": [
+								"profile",
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -5247,9 +5748,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile", "applications"]
+							"path": [
+								"profile",
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -5290,9 +5796,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile/bookmarks",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile", "bookmarks"]
+							"path": [
+								"profile",
+								"bookmarks"
+							]
 						}
 					},
 					"response": []
@@ -5339,9 +5850,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile/bookmarks",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile", "bookmarks"]
+							"path": [
+								"profile",
+								"bookmarks"
+							]
 						}
 					},
 					"response": []
@@ -5382,9 +5898,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -5429,9 +5949,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies"]
+							"path": [
+								"companies"
+							]
 						}
 					},
 					"response": []
@@ -5465,9 +5989,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users"]
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -5507,9 +6035,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -5549,9 +6081,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -5562,7 +6098,9 @@
 						{
 							"listen": "test",
 							"script": {
-								"exec": [""],
+								"exec": [
+									""
+								],
 								"type": "text/javascript"
 							}
 						}
@@ -5588,9 +6126,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{jobId}}/bookmark",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{jobId}}", "bookmark"]
+							"path": [
+								"jobs",
+								"{{jobId}}",
+								"bookmark"
+							]
 						}
 					},
 					"response": []
@@ -5625,9 +6169,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/{{companyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "{{companyId}}"]
+							"path": [
+								"companies",
+								"{{companyId}}"
+							]
 						}
 					},
 					"response": []
@@ -5662,9 +6211,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/{{companyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "{{companyId}}"]
+							"path": [
+								"companies",
+								"{{companyId}}"
+							]
 						}
 					},
 					"response": []
@@ -5699,9 +6253,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users/{{newUserId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users", "{{newUserId}}"]
+							"path": [
+								"users",
+								"{{newUserId}}"
+							]
 						}
 					},
 					"response": []
@@ -5736,9 +6295,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users/{{newUserId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users", "{{newUserId}}"]
+							"path": [
+								"users",
+								"{{newUserId}}"
+							]
 						}
 					},
 					"response": []
@@ -5774,9 +6338,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{applicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{applicationId}}"]
+							"path": [
+								"applications",
+								"{{applicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -5812,9 +6381,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{applicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{applicationId}}"]
+							"path": [
+								"applications",
+								"{{applicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -5850,9 +6424,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/user/{{userId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "user", "{{userId}}"]
+							"path": [
+								"applications",
+								"user",
+								"{{userId}}"
+							]
 						}
 					},
 					"response": []
@@ -5888,9 +6468,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/user/{{userId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "user", "{{userId}}"]
+							"path": [
+								"applications",
+								"user",
+								"{{userId}}"
+							]
 						}
 					},
 					"response": []
@@ -5926,9 +6512,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/job/{{applicationJobId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "job", "{{applicationJobId}}"]
+							"path": [
+								"applications",
+								"job",
+								"{{applicationJobId}}"
+							]
 						}
 					},
 					"response": []
@@ -5964,9 +6556,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/job/{{applicationJobId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "job", "{{applicationJobId}}"]
+							"path": [
+								"applications",
+								"job",
+								"{{applicationJobId}}"
+							]
 						}
 					},
 					"response": []
@@ -6002,9 +6600,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/bookmarks",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["bookmarks"]
+							"path": [
+								"bookmarks"
+							]
 						}
 					},
 					"response": []
@@ -6040,9 +6642,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/bookmarks",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["bookmarks"]
+							"path": [
+								"bookmarks"
+							]
 						}
 					},
 					"response": []
@@ -6088,9 +6694,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/{{companyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "{{companyId}}"]
+							"path": [
+								"companies",
+								"{{companyId}}"
+							]
 						}
 					},
 					"response": []
@@ -6125,9 +6736,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/{{companyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "{{companyId}}"]
+							"path": [
+								"companies",
+								"{{companyId}}"
+							]
 						}
 					},
 					"response": []
@@ -6167,9 +6783,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -6215,9 +6835,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -6260,9 +6884,15 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/user/{{userId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "user", "{{userId}}"]
+							"path": [
+								"applications",
+								"user",
+								"{{userId}}"
+							]
 						}
 					},
 					"response": []
@@ -6303,9 +6933,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{newApplicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{newApplicationId}}"]
+							"path": [
+								"applications",
+								"{{newApplicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -6346,9 +6981,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{newApplicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{newApplicationId}}"]
+							"path": [
+								"applications",
+								"{{newApplicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -6392,9 +7032,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users"]
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -6433,9 +7077,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/users",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["users"]
+							"path": [
+								"users"
+							]
 						}
 					},
 					"response": []
@@ -6473,9 +7121,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -6512,9 +7164,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/authentications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["authentications"]
+							"path": [
+								"authentications"
+							]
 						}
 					},
 					"response": []
@@ -6548,9 +7204,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile"]
+							"path": [
+								"profile"
+							]
 						}
 					},
 					"response": []
@@ -6584,9 +7244,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/profile",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["profile"]
+							"path": [
+								"profile"
+							]
 						}
 					},
 					"response": []
@@ -6631,9 +7295,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies"]
+							"path": [
+								"companies"
+							]
 						}
 					},
 					"response": []
@@ -6675,9 +7343,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories"]
+							"path": [
+								"categories"
+							]
 						}
 					},
 					"response": []
@@ -6722,9 +7394,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs"]
+							"path": [
+								"jobs"
+							]
 						}
 					},
 					"response": []
@@ -6788,9 +7464,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -6836,9 +7516,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -6879,9 +7563,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{mqApplicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{mqApplicationId}}"]
+							"path": [
+								"applications",
+								"{{mqApplicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -6921,9 +7610,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -6968,9 +7661,13 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications"]
+							"path": [
+								"applications"
+							]
 						}
 					},
 					"response": []
@@ -7002,9 +7699,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/applications/{{mqApplicationId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["applications", "{{mqApplicationId}}"]
+							"path": [
+								"applications",
+								"{{mqApplicationId}}"
+							]
 						}
 					},
 					"response": []
@@ -7036,9 +7738,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/jobs/{{mqJobId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["jobs", "{{mqJobId}}"]
+							"path": [
+								"jobs",
+								"{{mqJobId}}"
+							]
 						}
 					},
 					"response": []
@@ -7070,9 +7777,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/companies/{{mqCompanyId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["companies", "{{mqCompanyId}}"]
+							"path": [
+								"companies",
+								"{{mqCompanyId}}"
+							]
 						}
 					},
 					"response": []
@@ -7104,9 +7816,14 @@
 						"url": {
 							"raw": "http://localhost:{{port}}/categories/{{mqCategoryId}}",
 							"protocol": "http",
-							"host": ["localhost"],
+							"host": [
+								"localhost"
+							],
 							"port": "{{port}}",
-							"path": ["categories", "{{mqCategoryId}}"]
+							"path": [
+								"categories",
+								"{{mqCategoryId}}"
+							]
 						}
 					},
 					"response": []
