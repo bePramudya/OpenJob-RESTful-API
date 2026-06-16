@@ -10,6 +10,7 @@
 		"lint-format": "biome check --write"
 	},
 	"dependencies": {
+		"amqplib": "^2.0.1",
 		"bcrypt": "^6.0.0",
 		"cookie-parser": "~1.4.4",
 		"dotenv": "^17.4.2",
@@ -24,7 +25,6 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.16",
-		"newman": "^6.2.2",
 		"node-pg-migrate": "^8.0.4",
 		"nodemon": "^3.1.14"
 	}
