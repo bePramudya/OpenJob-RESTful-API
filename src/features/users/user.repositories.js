@@ -1,4 +1,4 @@
-import pool from "../../shared/database/pool.js";
+import pool from "../../shared/config/pool.js";
 import { cacheAside } from "../../shared/utils/cacheAside.js";
 
 class UserRepositories {

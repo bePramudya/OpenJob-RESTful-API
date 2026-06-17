@@ -1,4 +1,4 @@
-import pool from "../../shared/database/pool.js";
+import pool from "../../shared/config/pool.js";
 import CacheService from "../../shared/services/CacheService.js";
 import { cacheAside } from "../../shared/utils/cacheAside.js";
 
@@ -204,6 +204,26 @@ class ApplicationRepositories {
 		};
 
 		CacheService.delete(cacheKey);
+		const result = await pool.query(query);
+		return result.rows[0];
+	}
+
+	async getDetailForNotification(applicationId) {
+		const query = {
+			text: `SELECT
+                applicants.email AS applicant_email,
+                applicants.name AS applicant_name,
+                applications.applied_at AS applied_at,
+                owners.email AS owner_email
+            FROM applications
+                JOIN users AS applicants ON applicants.id = applications.user_id
+                JOIN jobs ON jobs.id = applications.job_id
+                JOIN companies ON companies.id = jobs.company_id
+                JOIN users AS owners ON owners.id = companies.user_id
+            WHERE applications.id = $1`,
+			values: [applicationId],
+		};
+
 		const result = await pool.query(query);
 		return result.rows[0];
 	}

@@ -1,4 +1,4 @@
-import client from "../database/redisClient.js";
+import client from "../config/redisClient.js";
 
 class CacheService {
 	constructor(client) {

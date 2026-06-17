@@ -5,6 +5,7 @@ import {
 } from "../../shared/errors/index.js";
 import { handleConflictError } from "../../shared/utils/handleConflictError.js";
 import { isUuid } from "../../shared/utils/isUuid.js";
+import { publishNewApplication } from "./application.queue.js";
 import ApplicationRepositories from "./application.repositories.js";
 
 export const getApplicationsService = async () => {
@@ -46,6 +47,7 @@ export const createApplicationService = async ({
 }) => {
 	if (!userId) throw new ValidationError("User ID is required");
 	if (!jobId) throw new ValidationError("Job ID is required");
+	if (!isUuid(userId) || !isUuid(jobId)) throw new ValidationError("not UUID");
 
 	const job = await ApplicationRepositories.getJobById(jobId);
 	if (!job) throw new NotFoundError("Job");
@@ -56,7 +58,13 @@ export const createApplicationService = async ({
 
 	const application = await Promise.try(() =>
 		ApplicationRepositories.insertApplication({ userId, jobId, coverLetter }),
-	).catch(handleConflictError());
+	).catch((_err) => {
+		throw new ValidationError("Duplicate Application");
+	});
+
+	await Promise.try(() => publishNewApplication(application.id)).catch((err) =>
+		console.error("Failed to publish new application event:", err.message),
+	);
 
 	return application;
 };

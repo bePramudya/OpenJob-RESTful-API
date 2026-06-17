@@ -19,7 +19,9 @@ export const registerService = async ({
 
 	const user = await Promise.try(() =>
 		UserRepositories.insertUser({ name, email, hashedPassword, role }),
-	).catch(handleConflictError("Email Already Registered"));
+	).catch((_err) => {
+		throw new ValidationError("Email already registered");
+	});
 
 	return user;
 };

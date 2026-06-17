@@ -1,4 +1,4 @@
-import pool from "../../shared/database/pool.js";
+import pool from "../../shared/config/pool.js";
 import { InternalServerError } from "../../shared/errors/index.js";
 
 class AuthRepositories {
