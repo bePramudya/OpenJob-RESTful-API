@@ -6,6 +6,7 @@
 	"scripts": {
 		"start": "node server.js",
 		"start:dev": "nodemon server.js",
+		"start:consumer": "node src/consumer/consumer.js",
 		"migrate": "node-pg-migrate -m ./src/migrations",
 		"lint-format": "biome check --write"
 	},
