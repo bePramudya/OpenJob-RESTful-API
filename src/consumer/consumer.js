@@ -12,12 +12,11 @@ const init = async () => {
 		ApplicationRepositories,
 		mailSender,
 	);
-	// listener.setChannel(channel);
 
 	await channel.assertQueue(QUEUE_NAME, { durable: true });
 	console.log(`Consumer siap, menunggu pesan dari queue "${QUEUE_NAME}"...`);
 
-	channel.consume(QUEUE_NAME, listener.listen, { noAck: false });
+	channel.consume(QUEUE_NAME, listener.listen, { noAck: true });
 };
 
 init().catch((error) => {
