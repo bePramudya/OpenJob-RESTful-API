@@ -1,7 +1,7 @@
-import ApplicationRepositories from "../features/applications/application.repositories.js";
-import MailSender from "../shared/config/MailSender.js";
-import { getChannel } from "../shared/config/rabbitmq.js";
+import ApplicationRepositories from "../src/features/applications/application.repositories.js";
+import MailSender from "./MailSender.js";
 import NotificationListener from "./NotificationListener.js";
+import { getChannel } from "./rabbitmq.js";
 
 const QUEUE_NAME = "new_application";
 

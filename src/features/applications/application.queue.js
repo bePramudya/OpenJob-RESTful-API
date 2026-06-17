@@ -1,4 +1,4 @@
-import { getChannel } from "../../shared/config/rabbitmq.js";
+import { getChannel } from "../../../consumer/rabbitmq.js";
 
 const QUEUE_NAME = "new_application";
 
