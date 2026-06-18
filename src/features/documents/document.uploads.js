@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import multer from "multer";
+import ValidationError from "../../shared/errors/ValidationError.js";
 
 const uploadDir = path.join(process.cwd(), "public", "uploads", "documents");
 fs.mkdirSync(uploadDir, { recursive: true });
@@ -29,7 +30,7 @@ const storage = multer.diskStorage({
 const fileFilter = (_req, file, cb) => {
 	if (!ALLOWED_MIME_TYPES.has(file.mimetype)) {
 		return cb(
-			new Error("Invalid file type. Allowed: pdf"),
+			new ValidationError("File is required"),
 			// new Error("Invalid file type. Allowed: pdf, jpg, png, doc, docx"),
 		);
 	}

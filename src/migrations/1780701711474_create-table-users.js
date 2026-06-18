@@ -9,19 +9,41 @@ export const shorthands = undefined;
  * @returns {Promise<void> | void}
  */
 export const up = (pgm) => {
-	pgm.createType("user_role", ["user", "jobseeker", "employer", "admin"]);
-	pgm.createType("job_type", [
-		"full-time",
-		"part-time",
-		"contract",
-		"internship",
-	]);
-	pgm.createType("application_status", [
-		"pending",
-		"reviewed",
-		"accepted",
-		"rejected",
-	]);
+	// pgm.createType("user_role", ["user", "jobseeker", "employer", "admin"]);
+	// pgm.createType("job_type", [
+	// 	"full-time",
+	// 	"part-time",
+	// 	"contract",
+	// 	"internship",
+	// ]);
+	// pgm.createType("application_status", [
+	// 	"pending",
+	// 	"reviewed",
+	// 	"accepted",
+	// 	"rejected",
+	// ]);
+
+	pgm.sql(`
+		DO $$ BEGIN
+			CREATE TYPE user_role AS ENUM ('user', 'jobseeker', 'employer', 'admin');
+		EXCEPTION
+			WHEN duplicate_object THEN null;
+		END $$;
+	`);
+	pgm.sql(`
+		DO $$ BEGIN
+			CREATE TYPE job_type AS ENUM ('full-time', 'part-time', 'contract', 'internship');
+		EXCEPTION
+			WHEN duplicate_object THEN null;
+		END $$;
+	`);
+	pgm.sql(`
+		DO $$ BEGIN
+			CREATE TYPE application_status AS ENUM ('pending', 'reviewed', 'accepted', 'rejected');
+		EXCEPTION
+			WHEN duplicate_object THEN null;
+		END $$;
+	`);
 
 	pgm.createTable("users", {
 		id: {

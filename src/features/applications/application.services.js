@@ -3,7 +3,6 @@ import {
 	NotFoundError,
 	ValidationError,
 } from "../../shared/errors/index.js";
-import { handleConflictError } from "../../shared/utils/handleConflictError.js";
 import { isUuid } from "../../shared/utils/isUuid.js";
 import { publishNewApplication } from "./application.queue.js";
 import ApplicationRepositories from "./application.repositories.js";

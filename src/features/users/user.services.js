@@ -1,7 +1,6 @@
 import bcrypt from "bcrypt";
 import "dotenv/config";
 import { NotFoundError, ValidationError } from "../../shared/errors/index.js";
-import { handleConflictError } from "../../shared/utils/handleConflictError.js";
 import { isUuid } from "../../shared/utils/isUuid.js";
 import UserRepositories from "./user.repositories.js";
 
