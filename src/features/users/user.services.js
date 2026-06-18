@@ -16,11 +16,23 @@ export const registerService = async ({
 
 	const hashedPassword = await bcrypt.hash(password, 10);
 
-	const user = await Promise.try(() =>
-		UserRepositories.insertUser({ name, email, hashedPassword, role }),
-	).catch((_err) => {
+	// const user = await Promise.try(() =>
+	// 	UserRepositories.insertUser({ name, email, hashedPassword, role }),
+	// ).catch((_err) => {
+	// 	throw new ValidationError("Email already registered");
+	// });
+
+	let user;
+	try {
+		user = await UserRepositories.insertUser({
+			name,
+			email,
+			hashedPassword,
+			role,
+		});
+	} catch (_err) {
 		throw new ValidationError("Email already registered");
-	});
+	}
 
 	return user;
 };

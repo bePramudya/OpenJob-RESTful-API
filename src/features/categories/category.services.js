@@ -20,9 +20,16 @@ export const getCategoryByIdService = async (id) => {
 export const createCategoryService = async ({ name, description }) => {
 	if (!name) throw new ValidationError("Category name is required");
 
-	const category = await Promise.try(() =>
-		CategoryRepositories.insertCategory({ name, description }),
-	).catch(handleConflictError("Category already exists"));
+	// const category = await Promise.try(() =>
+	// 	CategoryRepositories.insertCategory({ name, description }),
+	// ).catch(handleConflictError("Category already exists"));
+
+	let category;
+	try {
+		category = await CategoryRepositories.insertCategory({ name, description });
+	} catch (_err) {
+		handleConflictError("Category already exists");
+	}
 
 	return category;
 };
@@ -33,9 +40,20 @@ export const updateCategoryService = async ({ id, name, description }) => {
 	const category = await CategoryRepositories.getCategoryById(id);
 	if (!category) throw new NotFoundError("Category");
 
-	const updatedCategory = await Promise.try(() =>
-		CategoryRepositories.updateCategory({ id, name, description }),
-	).catch(handleConflictError("Category already exists"));
+	// const updatedCategory = await Promise.try(() =>
+	// 	CategoryRepositories.updateCategory({ id, name, description }),
+	// ).catch(handleConflictError("Category already exists"));
+
+	let updatedCategory;
+	try {
+		updatedCategory = await CategoryRepositories.updateCategory({
+			id,
+			name,
+			description,
+		});
+	} catch (_err) {
+		handleConflictError("Category already exists");
+	}
 
 	return updatedCategory;
 };

@@ -39,12 +39,22 @@ export const createBookmarkService = async ({ userId, jobId }) => {
 	const job = await BookmarkRepositories.getJobById(jobId);
 	if (!job) throw new NotFoundError("Job");
 
-	const bookmark = await Promise.try(() =>
-		BookmarkRepositories.insertBookmark({
+	// const bookmark = await Promise.try(() =>
+	// 	BookmarkRepositories.insertBookmark({
+	// 		userId,
+	// 		jobId,
+	// 	}),
+	// ).catch(handleConflictError("Job already bookmarked"));
+
+	let bookmark;
+	try {
+		bookmark = await BookmarkRepositories.insertBookmark({
 			userId,
 			jobId,
-		}),
-	).catch(handleConflictError("Job already bookmarked"));
+		});
+	} catch (err) {
+		handleConflictError("Job already bookmarked");
+	}
 
 	return bookmark;
 };

@@ -55,15 +55,32 @@ export const createApplicationService = async ({
 	// 	throw new ForbiddenError("You cannot apply to your own job");
 	// }
 
-	const application = await Promise.try(() =>
-		ApplicationRepositories.insertApplication({ userId, jobId, coverLetter }),
-	).catch((_err) => {
-		throw new ValidationError("Duplicate Application");
-	});
+	// const application = await Promise.try(() =>
+	// 	ApplicationRepositories.insertApplication({ userId, jobId, coverLetter }),
+	// ).catch((_err) => {
+	// 	throw new ValidationError("Duplicate Application");
+	// });
 
-	await Promise.try(() => publishNewApplication(application.id)).catch((err) =>
-		console.error("Failed to publish new application event:", err.message),
-	);
+	// await Promise.try(() => publishNewApplication(application.id)).catch((err) =>
+	// 	console.error("Failed to publish new application event:", err.message),
+	// );
+
+	let application;
+	try {
+		application = await ApplicationRepositories.insertApplication({
+			userId,
+			jobId,
+			coverLetter,
+		});
+	} catch (_err) {
+		throw new ValidationError("Duplicate Application");
+	}
+
+	try {
+		await publishNewApplication(application.id);
+	} catch (err) {
+		console.error("Failed to publish new application event:", err.message);
+	}
 
 	return application;
 };
